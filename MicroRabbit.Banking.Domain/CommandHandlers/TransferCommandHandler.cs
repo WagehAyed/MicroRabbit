@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MicroRabbit.Banking.Domain.Commands;
-using MicroRabbit.Banking.Domain.EventHandlers;
+using MicroRabbit.Banking.Domain.Events;
+using MicroRabbit.Banking.Domain.Events;
 using MicroRabbit.Domain.Core.Bus;
 using System;
 using System.Collections.Generic;

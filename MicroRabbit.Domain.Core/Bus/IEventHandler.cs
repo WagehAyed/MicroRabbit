@@ -1,16 +1,18 @@
 ﻿using MicroRabbit.Domain.Core.Events;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace MicroRabbit.Domain.Core.Bus
 {
-    public interface IEventHandler<in Tevent> : IEventHandler
-        where Tevent : Event
+    public interface IEventHandler<in TEvent> : IEventHandler
+        where TEvent : Event
     {
-        Task Handle(Tevent @event);
-
+        Task Handle(TEvent @event);
     }
 
-   public interface IEventHandler
+    public interface IEventHandler
     {
 
     }

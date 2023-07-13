@@ -3,7 +3,7 @@ using MicroRabbit.Banking.Application.Interfaces;
 using MicroRabbit.Banking.Application.Services;
 using MicroRabbit.Banking.Data.Context;
 using MicroRabbit.Banking.Data.Repository;
-using MicroRabbit.Banking.Domain.EventHandlers;
+using MicroRabbit.Banking.Domain.Events;
 using MicroRabbit.Banking.Domain.Interfaces;
 using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.infra.Ioc;
@@ -71,13 +71,9 @@ namespace MicroRabbit.Banking.Api
             {
                 endpoints.MapControllers();
             });
-            ConfigureEvents(app);
+             
         }
 
-        private void ConfigureEvents(IApplicationBuilder app)
-        {
-            var eventBus = app.ApplicationServices.GetRequiredService<IEventBus>();
-            //eventBus.Subscribe<TransferCreatedEvent,TransferEvent>();
-        }
+        
     }
 }
