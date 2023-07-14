@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MicroRabbit.Transfer.Domain.Models
+namespace MicroRabbit.Transfer.Data.Models
 {
     public  class TransferLog
     {

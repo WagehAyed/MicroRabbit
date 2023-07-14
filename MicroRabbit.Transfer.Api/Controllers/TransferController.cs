@@ -1,5 +1,5 @@
 ﻿using MicroRabbit.Transfer.Application.Interfaces;
-using MicroRabbit.Transfer.Domain.Models;
+using MicroRabbit.Transfer.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

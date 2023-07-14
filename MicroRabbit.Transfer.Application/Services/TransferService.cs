@@ -1,7 +1,7 @@
 ﻿using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Transfer.Application.Interfaces;
-using MicroRabbit.Transfer.Data.Repository;
-using MicroRabbit.Transfer.Domain.Models;
+using MicroRabbit.Transfer.Data.Models;
+using MicroRabbit.Transfer.Data.Repository; 
 using System;
 using System.Collections.Generic;
 using System.Linq;

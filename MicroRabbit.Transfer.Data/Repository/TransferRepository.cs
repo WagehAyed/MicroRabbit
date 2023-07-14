@@ -1,5 +1,5 @@
 ﻿using MicroRabbit.Transfer.Data.Context;
-using MicroRabbit.Transfer.Domain.Models;
+using MicroRabbit.Transfer.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +15,13 @@ namespace MicroRabbit.Transfer.Data.Repository
         {
             _context=context;
         }
+
+        public int Add(TransferLog transferLog)
+        { 
+             _context.TransferLog.Add(transferLog);
+            return  _context.SaveChanges() ;
+        }
+
         public IEnumerable<TransferLog> GetTransferLogs()
         {
             return _context.TransferLog;
