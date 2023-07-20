@@ -1,0 +1,9 @@
+version: '3.4'
+
+services:
+  elsaworkflowdemo1:
+    image: ${DOCKER_REGISTRY-}elsaworkflowdemo1
+    build:
+      context: .
+      dockerfile: ElsaWorkFlowDemo1/Dockerfile
+ 

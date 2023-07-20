@@ -1,0 +1,31 @@
+version: '3.4'
+
+services:
+  elsaworkflowdemo1: 
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ELSA__SERVICES__WORKFLOW__ENABLED= 'true'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_NAME= 'Elsa.Persistence.EntityFramework.Core'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_ASSEMBLY_NAME= 'Elsa.Persistence.EntityFramework.Core'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_TYPE_NAME= 'Elsa.Persistence.EntityFramework.Core.WorkflowDbContextFactory, Elsa.Persistence.EntityFramework.Core'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_DB_NAME= 'WorkflowElsaDemo'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_DB_SCHEMA= 'dbo'
+      - ELSA__SERVICES__WORKFLOW__PROVIDER_MIGRATE_DB= 'true'
+      - ELSA__SERVICES__WORKFLOW__ENABLE_WORKFLOW_DEFINITIONS_AS_API_ENDPOINTS= 'true'
+      - ELSA__SERVICES__WORKFLOW__ENABLE_POOLED_WORKFLOW_EXECUTION= 'false'
+      - ConnectionStrings__DefaultConnection= 'Server=WAGEHAYED//+MS22;Database=WorkflowElsaDemo;User Id=sa;Password=P@ssw0rd'  
+    ports:
+      - "80"
+      - "443"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+  db:
+     image: mcr.microsoft.com/mssql/server:2019-latest
+     environment:
+         SA_PASSWORD: 'P@ssw0rd'
+         ACCEPT_EULA: 'Y'
+     ports:
+          - '1433:1433'
+ 
